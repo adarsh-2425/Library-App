@@ -12,4 +12,13 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addUser={
+    firstName:'',
+    lastName:'',
+    email:'',
+    password:''};
+    
+    newUser(){
+      alert("New User Added")
+    }
 }

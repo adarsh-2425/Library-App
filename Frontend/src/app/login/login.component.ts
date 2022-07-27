@@ -11,5 +11,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  User={
+    username:'',
+    password:''};
+    
+    userVerify(){
+      alert("good")
+    }
 }

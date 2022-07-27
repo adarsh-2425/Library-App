@@ -1,0 +1,14 @@
+.hero{
+    background: url('https://source.unsplash.com/GWucxGZvO-w');
+    height: 625px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
