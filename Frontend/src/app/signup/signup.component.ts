@@ -19,6 +19,6 @@ export class SignupComponent implements OnInit {
     password:''};
     
     newUser(){
-      alert("New User Added")
+      console.log("New User Added")
     }
 }

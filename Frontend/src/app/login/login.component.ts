@@ -16,6 +16,6 @@ export class LoginComponent implements OnInit {
     password:''};
     
     userVerify(){
-      alert("good")
+      console.log("success")
     }
 }
