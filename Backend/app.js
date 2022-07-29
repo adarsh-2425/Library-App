@@ -17,6 +17,22 @@ app.get('/books',function(req,res){
                 });
 });
 
+app.post('/insert',function(req,res){
+    res.header("Access-Control-Allow-Origin","*") 
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    console.log(req.body);
+   
+    var book = {       
+        bookId : req.body.book.bookId,
+        bookName : req.body.book.bookName,
+        genre : req.body.book.genre,
+        authorName : req.body.book.authorName,
+        imageUrl : req.body.book.imageUrl,
+   }       
+   var book = new BookData(book);
+   book.save();
+});
+
 app.listen(3000, function(){
     console.log('listening to port 3000');
 });

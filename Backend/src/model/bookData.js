@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 var NewBookSchema = new Schema({
     bookId : Number,
     bookName : String,
+    genre : String,
     authorName : String,
     imageUrl : String
 });

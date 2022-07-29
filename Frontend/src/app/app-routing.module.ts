@@ -21,16 +21,16 @@ const routes: Routes = [
   },
   {
     path:'books',component:BooksComponent,
-    children:[
+  },
       {
         path:'header',component:HeaderComponent
       },
       {
         path:'new-book',component:NewBookComponent
       }
+    
     ]
-  }
-];
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
