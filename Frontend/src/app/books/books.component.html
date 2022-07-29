@@ -31,7 +31,10 @@
                       <td>{{ book.bookName }}</td>
                       <td>{{ book.genre }}</td>
                       <td>{{ book.authorName }}</td>
-                      
+                      <td>
+                        <button class="btn btn-warning" style="cursor:pointer"  (click)="editBook(book)" style="margin-left: 20px;"> Update</button>
+                        <!-- <button class="btn btn-danger" style="cursor:pointer" (click)="deleteBook(book)"> Delete</button> -->
+                      </td>
                     </tr>              
               </tbody>
               </table>

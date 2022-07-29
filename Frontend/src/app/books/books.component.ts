@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookModel } from './book.model';
 import { BookService } from '../book.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-books',
@@ -15,7 +17,7 @@ export class BooksComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
 
-  constructor(private bookService: BookService) { }
+  constructor(private router:Router,private bookService: BookService) { }
   
 
   ngOnInit(): void {
@@ -23,5 +25,10 @@ export class BooksComponent implements OnInit {
       this.books=JSON.parse(JSON.stringify(data));
   })
   }
+  editBook(book:any)
+  {
+    localStorage.setItem("editBookId", book._id.toString());
+    this.router.navigate(['/update-book']);
 
+  }
 }
