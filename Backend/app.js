@@ -65,6 +65,16 @@ app.put('/update',(req,res)=>{
        res.send();
    })
  })
+ app.delete('/remove/:id',(req,res)=>{
+   
+    id = req.params.id;
+   BookData.findByIdAndDelete({"_id":id})
+    .then(()=>{
+        console.log('Deletion success')
+        res.send();
+    })
+  })
+    
 
 app.listen(3000, function(){
     console.log('listening to port 3000');

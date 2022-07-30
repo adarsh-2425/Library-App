@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class BooksComponent implements OnInit {
 
   pageTitle: string = 'Books';
-  books: BookModel[] | undefined;
+  books: BookModel[] = [];
 
   imageWidth: number = 50;
   imageMargin: number = 2;
@@ -29,6 +29,15 @@ export class BooksComponent implements OnInit {
   {
     localStorage.setItem("editBookId", book._id.toString());
     this.router.navigate(['/update-book']);
+
+  }
+  deleteBook(book:any)
+  {
+    this.bookService.deleteBook(book._id)
+      .subscribe((data) => {
+        this.books = this.books.filter(b => b !== book);
+      })
+  
 
   }
 }
