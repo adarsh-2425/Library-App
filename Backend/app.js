@@ -6,7 +6,24 @@ var app = new express();
 app.use(cors());
 app.use(bodyparser.json());
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+username='admin';
+password='1234';
+
+app.post('/login',(req,res)=>{
+    let userData = req.params.body;
+
+    if(!username){
+        res.status(401).send('Invalid Username')
+    }
+    else if(!password){
+        res.status(401).send('Invalid Password')
+    }else{
+        res.status(200).send()
+    }
+    
+})
+
+
 
 app.get('/books',function(req,res){
 
