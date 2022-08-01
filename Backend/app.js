@@ -1,27 +1,39 @@
 const express = require('express');
 const BookData = require('./src/model/bookData');
+const UserData = require('./src/model/userData')
 const cors = require('cors');
 var bodyparser=require('body-parser');
 var app = new express();
+const jwt = require('jsonwebtoken');
 app.use(cors());
 app.use(bodyparser.json());
 var mongoose = require('mongoose');
-username='admin';
-password='1234';
+
 
 app.post('/login',(req,res)=>{
-    let userData = req.params.body;
-
-    if(!username){
-        res.status(401).send('Invalid Username')
-    }
-    else if(!password){
-        res.status(401).send('Invalid Password')
-    }else{
-        res.status(200).send()
-    }
+        username=req.body.uname;
+        password=req.body.password;
+        let payload = {subject:username+password}
+        let token = jwt.sign(payload,'secretKey')
+        res.status(200).send({token})
+        console.log(req.body.uname)
+    console.log(req.body.password)  
+    // }
     
 })
+
+
+
+app.get('/users',function(req,res){
+
+    // res.header is for development mode. no need in live application
+    res.header("Access-Control-Allow-Origin","*") 
+    res.header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    UserData.find()
+                .then(function(users){
+                    res.send(users);
+                });
+});
 
 
 

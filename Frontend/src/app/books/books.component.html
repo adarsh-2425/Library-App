@@ -4,15 +4,15 @@
 
 <section>
     <div class='card'>
-        <div class='card-header'>
+        <!-- <div class='card-header'>
          {{pageTitle}}
-        </div>
+        </div> -->
         
         <div class='card-body'>            
           <div class='table-responsive'>
             <table class='table'>
                   
-              <thead>
+              <thead class="head">
                 <tr>
                   <th>Image</th>
                   <th>Book Name</th>
@@ -32,7 +32,8 @@
                       <td>{{ book.genre }}</td>
                       <td>{{ book.authorName }}</td>
                       <td>
-                        <button class="btn btn-warning" style="cursor:pointer"  (click)="editBook(book)" style="margin-left: 20px;"> Update</button>
+                        <button class="btn btn-primary" style="cursor:pointer"  (click)="editBook(book)" style="margin-left: 20px;"> Update</button>
+                        
                         <button class="btn btn-danger" style="cursor:pointer" (click)="deleteBook(book)"> Delete</button>
                       </td>
                     </tr>              

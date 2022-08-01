@@ -1,0 +1,6 @@
+.nav-item{
+   font-weight: light;
+}
+.nav-item:hover{
+   font-weight: bolder;
+}
