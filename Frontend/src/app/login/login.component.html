@@ -61,12 +61,14 @@
             <div  >
               <input type="email" id="form2Example18" class="form-control form-control-lg" name="username" [(ngModel)]="user.uname" pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required />
               <label class="form-label" for="form2Example18"  aria-required="" >Email address</label>
+             
             </div>
 
             <!-- <div class="form-outline mb-4"> -->
             <div>
-              <input type="password" id="form2Example28" class="form-control form-control-lg" name="password" [(ngModel)]="user.password" minlength="6" required />
+              <input type="password" id="form2Example28" class="form-control form-control-lg" name="password" [(ngModel)]="user.password" minlength="1" required />
               <label class="form-label" for="form2Example28" >Password</label>
+              
             </div>
 
             <div class="pt-1 mb-4">

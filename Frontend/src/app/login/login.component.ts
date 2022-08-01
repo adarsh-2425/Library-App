@@ -25,10 +25,12 @@ export class LoginComponent implements OnInit {
  
   }
 
+
     
     loginUser(){
       // writing connection to respective service function
       // so the request from client will be properly routed to the server side
+      
       this._auth.loginUser(this.user)
       .subscribe(
         res=>{
