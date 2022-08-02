@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class BookService {
+
+
   item= {
     bookId:'',
     bookName:'',
@@ -13,14 +15,14 @@ export class BookService {
     genre:''}
   constructor(private http:HttpClient) { }
   getBook(id:any){
-    return this.http.get(""+id);
+    return this.http.get("/"+id);
   }
   getBooks(){
-    return this.http.get("books");
+    return this.http.get("/books");
   }
   newBook(item:any)
   {   
-    return this.http.post("insert",{"book":item})
+    return this.http.post("/insert",{"book":item})
     .subscribe(data =>{console.log(data)})
   }
   editBook(book:any)
@@ -32,7 +34,7 @@ export class BookService {
   deleteBook(id:any)
   {
 
-    return this.http.delete("remove/"+id)
+    return this.http.delete("/remove/"+id)
 
   }
 }

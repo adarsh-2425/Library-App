@@ -7,8 +7,7 @@ var app = new express();
 const jwt = require('jsonwebtoken');
 app.use(cors());
 app.use(bodyparser.json());
-const port = process.env.PORT || 8080;
-
+const port = process.env.PORT || 3000;
 
 
 app.post('/login',(req,res)=>{
