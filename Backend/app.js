@@ -7,6 +7,7 @@ var app = new express();
 const jwt = require('jsonwebtoken');
 app.use(cors());
 app.use(bodyparser.json());
+const port = process.env.PORT || 8080;
 
 
 
@@ -105,6 +106,6 @@ app.put('/update',(req,res)=>{
   })
     
 
-app.listen(3000, function(){
-    console.log('listening to port 3000');
+app.listen(port, function(){
+    console.log(`listening to port ${port}`);
 });

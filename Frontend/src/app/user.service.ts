@@ -13,9 +13,9 @@ export class UserService {
     }
   constructor(private http:HttpClient) { }
   getUser(id:any){
-    return this.http.get("http://localhost:3000/"+id);
+    return this.http.get("/"+id);
   }
   getusers(){
-    return this.http.get("http://localhost:3000/users");
+    return this.http.get("users");
   }
 }
