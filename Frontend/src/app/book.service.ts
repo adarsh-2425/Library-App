@@ -13,10 +13,10 @@ export class BookService {
     genre:''}
   constructor(private http:HttpClient) { }
   getBook(id:any){
-    return this.http.get("/"+id);
+    return this.http.get(""+id);
   }
   getBooks(){
-    return this.http.get('/books');
+    return this.http.get("books");
   }
   newBook(item:any)
   {   
